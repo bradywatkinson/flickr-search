@@ -27,10 +27,12 @@ const imageListReducer = (state = initialState, action) =>
       }
       case LOAD_IMAGES_SUCCESS: {
         draft.success = true;
+        draft.failure = false;
         draft.images = action.payload.images;
         break;
       }
       case LOAD_IMAGES_FAILURE: {
+        draft.success = false;
         draft.failure = true;
         break;
       }

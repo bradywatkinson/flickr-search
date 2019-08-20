@@ -25,7 +25,7 @@ function ImageListPage() {
         <meta name="description" content="Description of ImageList" />
       </Helmet>
       <Page>
-        <Header title="Images" />
+        <Header title="Images" search />
         <ImageList />
       </Page>
     </div>

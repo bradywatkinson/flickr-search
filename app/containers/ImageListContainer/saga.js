@@ -9,9 +9,9 @@ import {
 } from './actions';
 import { LOAD_IMAGES_REQUEST } from './constants';
 
-export function* loadImagesSaga() {
+export function* loadImagesSaga(action) {
   try {
-    const response = yield call(getImages);
+    const response = yield call(getImages, action.payload.search);
     yield put(loadImagesSuccess(response.items));
   } catch (err) {
     yield put(loadImagesFailure(err));

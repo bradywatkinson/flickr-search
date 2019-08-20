@@ -13,9 +13,12 @@ import {
   SCROLL_IMAGE_LIST,
 } from './constants';
 
-export function loadImagesRequest() {
+export function loadImagesRequest(search) {
   return {
     type: LOAD_IMAGES_REQUEST,
+    payload: {
+      search,
+    },
   };
 }
 

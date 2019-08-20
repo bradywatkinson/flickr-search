@@ -22,7 +22,6 @@ import messages from './messages';
 
 export function ImageListContainer({
   dispatchLoadImagesRequest,
-  loading,
   success,
   failure,
   route,
@@ -34,17 +33,13 @@ export function ImageListContainer({
     dispatchLoadImagesRequest();
   }, []);
 
-  if (loading) {
-    return <LoadingIndicator />;
-  }
   if (success) {
     return renderRoutes(route.routes);
   }
   if (failure) {
     return <FormattedMessage {...messages.failure} />;
   }
-
-  return null;
+  return <LoadingIndicator />;
 }
 
 const mapStateToProps = state => ({

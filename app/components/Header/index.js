@@ -13,19 +13,25 @@ import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { makeStyles } from '@material-ui/core/styles';
 
+import SearchBar from 'containers/SearchBar';
+
 const useStyles = makeStyles({
   icon: {
     color: 'white',
   },
+  container: {
+    display: 'flex',
+    'justify-content': 'space-between',
+  },
 });
 
-function Header({ title, back }) {
+function Header({ title, back, search }) {
   const classes = useStyles();
 
   return (
     <div>
       <AppBar position="static" color="primary">
-        <Toolbar>
+        <Toolbar className={classes.container}>
           {back && (
             <IconButton
               className={classes.icon}
@@ -39,6 +45,7 @@ function Header({ title, back }) {
           <Typography variant="h6" color="inherit">
             {title}
           </Typography>
+          {search && <SearchBar />}
         </Toolbar>
       </AppBar>
     </div>
