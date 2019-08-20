@@ -1,5 +1,12 @@
 # Flickr Image Tracker
 
+## How to Run
+
+```
+npm install
+npm run start
+```
+
 ## Features
 
 - Scroll Restoration
