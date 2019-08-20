@@ -33,6 +33,11 @@ const selectImage = createSelector(
   (images, index) => images[index],
 );
 
+const selectImageTitl = createSelector(
+  selectImage,
+  image => image.title,
+);
+
 const selectInitialScrollOffset = createSelector(
   selectImageListDomain,
   imageList => imageList.scrollOffset,
@@ -45,5 +50,6 @@ export {
   selectFailure,
   selectImages,
   selectImage,
+  selectImageTitl,
   selectInitialScrollOffset,
 };

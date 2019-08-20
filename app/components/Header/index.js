@@ -23,6 +23,11 @@ const useStyles = makeStyles({
     display: 'flex',
     'justify-content': 'space-between',
   },
+  title: {
+    'white-space': 'nowrap',
+    overflow: 'hidden',
+    'text-overflow': 'ellipsis',
+  },
 });
 
 function Header({ title, back, search }) {
@@ -42,7 +47,7 @@ function Header({ title, back, search }) {
               <ArrowBackIcon />
             </IconButton>
           )}
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h6" color="inherit" className={classes.title}>
             {title}
           </Typography>
           {search && <SearchBar />}
