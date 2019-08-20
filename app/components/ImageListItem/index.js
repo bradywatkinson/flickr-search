@@ -5,40 +5,22 @@
  */
 
 import React from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-  listText: {
-    'white-space': 'nowrap',
-    overflow: 'hidden',
-    'text-overflow': 'ellipsis',
-  },
-});
+const ImgContainer = styled.img`
+  width: 100%;
+  height: 100%;
+`;
 
-function ImageListItem({ data, index, style }) {
+function ImageListItem({ data, columnIndex, rowIndex, style }) {
+  const index = columnIndex * 2 + rowIndex;
   const image = data[index];
-  const classes = useStyles();
 
   return (
-    <ListItem
-      button
-      component={Link}
-      to={`/${index}`}
-      style={style}
-      key={index}
-    >
-      <ListItemText
-        primary={image.title || <i>(untitled)</i>}
-        secondary={image.author}
-        classes={{ primary: classes.listText, secondary: classes.listText }}
-        primaryTypographyProps={{ component: 'p' }}
-      />
-      <ArrowForwardIcon />
-    </ListItem>
+    <Link to={`/${index}`} style={style}>
+      <ImgContainer src={image.media.m} />
+    </Link>
   );
 }
 

@@ -8,7 +8,9 @@ const getImages = tag => {
     { format: 'json', nojsoncallback: 1, tags: tag },
     { skipNulls: true },
   );
-  return fetch(`${proxyurl}${url}?${query}`).then(resp => resp.json());
+  return fetch(`${proxyurl}${url}?${query}`, {
+    mode: 'cors',
+  }).then(resp => resp.json());
 };
 
 export { getImages };
