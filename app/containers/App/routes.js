@@ -1,6 +1,6 @@
 import ImageListContainer from 'containers/ImageListContainer';
-import ImageListPage from 'components/ImageListPage/Loadable';
-import ImageDetailPage from 'components/ImageDetailPage/Loadable';
+import ImageListPage from 'pages/ImageListPage/Loadable';
+import ImageDetailPage from 'pages/ImageDetailPage/Loadable';
 
 const routes = [
   {
