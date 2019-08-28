@@ -14,7 +14,7 @@ const ImgContainer = styled.img`
 `;
 
 function ImageListItem({ data, columnIndex, rowIndex, style }) {
-  const index = columnIndex * 2 + rowIndex;
+  const index = rowIndex * 2 + columnIndex;
   const image = data[index];
 
   return (
